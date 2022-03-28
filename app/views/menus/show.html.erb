@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<br><br><table>
+<thead>
+<th><%= @menu.name %></th>
+
+<th><%= @menu.food_name %></th>
+
+<th><%= @menu.quantity%></th>
+
+</thead>  
+</table>
+
+<br><br>
+
+<ul>
+
+  <td><%= link_to 'Edit', edit_menu_path(@menu) %></td>
+       
+  
+
+  <li><%= link_to 'Go Back', menus_path %></li>
+
+</ul>
+

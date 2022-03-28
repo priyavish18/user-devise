@@ -1,0 +1,87 @@
+
+<h1>Menus</h1>
+<table>
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>Name</th>
+      <th>food_name_</th>
+      <th>quantity</th>
+      <th>User</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <% @menus.each do |menu| %>
+      <tr>
+        <td><%= image_tag menu.image, size:50 if menu.image.attached? %></td>
+        <td><%= menu.name %></td>
+        <td><%= menu.food_name %></td>
+        <td><%= menu.quantity %></td>
+        <td><%= menu.user.email %></td>
+        <td><%= link_to 'Show', menu %></td>
+
+        <% if menu.user == current_user %>
+        <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
+         <td><%= link_to 'Destroy', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+
+
+
+
+
+
+      </tr>
+    <% end %> 
+  </tbody>	
+</table>
+<br>
+<%= link_to 'New menu', new_menu_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1>Menu</h1>
+	<div>
+   <ul>
+<table>
+
+ 	<tr>
+      <th><#%= "NAME"%> </th>
+      <th><#%= "FOOD NAME"%> </th>
+      <th><#%= "QUANTITY"%> </th>
+   </tr>
+      <%# @menus.each do |menu| %>
+  
+</table>
+	<br>
+
+<table>
+	<li>
+		
+	 <td><#%= link_to menu.name, menu %> </td>
+	 <td><#%= link_to menu.food_name, menu %></td>
+	 <td><#%= link_to menu.quantity, menu %></td>
+	  	
+</li>
+	 
+	</ul>
+</table>
+<br><br>
+
+ 
+	&nbsp
+
+<#%= link_to "New menu", new_menu_path %>
+</div>
+
+ -->
